@@ -35,7 +35,7 @@
 
 /* Hover Effect for Links */
 .navbar--items ul li a:hover {
-  transform: scale(1.2); /* Slight hover zoom */
+  transform: scale(1.1); /* Slight hover zoom */
 }
 
 /* Active Link Styling */
@@ -45,22 +45,21 @@
 
 /* Hamburger menu */
 .nav__hamburger {
-  display: none;
-  width: 1.875rem;
-  height: 1.313rem;
+  all: unset; /* Resets all default styles */
+  display: inline-flex;
   flex-direction: column;
   justify-content: space-around;
-  position: absolute;
-  top: 12px;
-  right: 25px;
+  width: 24px;
+  height: 24px;
+  cursor: pointer;
 }
 
 .nav__hamburger__line {
-  height: 0.188rem;
   width: 100%;
-  background-color: #ffffff;
-  border-radius: 0.625rem;
-  transition: all ease-in-out 0.2s;
+  height: 3px;
+  background-color: #ffffff; /* Replace with your desired color */
+  border-radius: 2px;
+  transition: all 0.3s ease;
 }
 
 /* Responsive Design */

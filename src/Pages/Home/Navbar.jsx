@@ -2,7 +2,6 @@ import { useState, useEffect } from "react";
 import { Link } from "react-scroll";
 import './Navbar.css';
 
-
 function Navbar() {
     const [navActive, setNavActive] = useState(false);
 
@@ -33,17 +32,18 @@ function Navbar() {
             closeMenu();
         }
     }, []);
-    
+
     return (
         <nav className={`navbar ${navActive ? "active" : ""}`}>
-          <a
+          <button
             className={`nav__hamburger ${navActive ? "active" : ""}`}
             onClick={toggleNav}
+            aria-label="Toggle navigation menu"
           >
             <span className="nav__hamburger__line"></span>
             <span className="nav__hamburger__line"></span>
             <span className="nav__hamburger__line"></span>
-          </a>
+          </button>
           <div className={`navbar--items ${navActive ? "active" : ""}`}>
             <ul>
               <li>
@@ -61,7 +61,6 @@ function Navbar() {
                 </Link>
               </li>
 
-
               <li>
                 <Link
                   onClick={closeMenu}
@@ -76,7 +75,6 @@ function Navbar() {
                   Tools
                 </Link>
               </li>
-
 
               <li>
                 <Link
@@ -117,13 +115,10 @@ function Navbar() {
                   Contact
                 </a>
               </li>
-
-
             </ul>
           </div>
         </nav>
-      );
-    
+    );
 }
 
 export default Navbar;
