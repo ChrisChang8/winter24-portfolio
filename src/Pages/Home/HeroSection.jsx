@@ -5,10 +5,10 @@ export default function HeroSection() {
 
     const [currentWord, setCurrentWord] = useState('');
     const [typingIndex, setTypingIndex] = useState(0);
-    const [typingSpeed, setTypingSpeed] = useState(50); // Typing speed in ms
-    const words = ['FULL STACK, MACHINE LEARNING, and CLOUD COMPUTING.'];
+    const typingSpeed = 50; // Typing speed in ms
 
     useEffect(() => {
+        const words = ['FULL STACK, MACHINE LEARNING, and CLOUD COMPUTING.'];
         const current = words[0]; // Only one word to type
         if (typingIndex < current.length) {
             const timer = setTimeout(() => {
@@ -16,9 +16,10 @@ export default function HeroSection() {
                 setTypingIndex(typingIndex + 1);
             }, typingSpeed);
 
-            return () => clearTimeout(timer); // Cleanup timeout on component unmount
+            // Cleanup timeout on component unmount or before the next effect
+            return () => clearTimeout(timer);
         }
-    }, [typingIndex, typingSpeed, words]);
+    }, [typingIndex]);
 
     return (
         <section>
