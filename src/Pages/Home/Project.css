@@ -1,7 +1,14 @@
+.project--container{
+    width: 40%; /* Default width for smaller screens */
+    max-width: 1200px; /* Limit maximum width */
+    margin: 0 auto;
+    text-align: left;
+}
+
 .projects-grid {
     display: grid;
-    grid-template-columns: 1fr; /* Default: one project per row */
-    gap: 20px; /* Space between rows */
+    grid-template-columns: 1fr; /* Two projects per row */
+    gap: 20px; /* Space between rows and columns */
     justify-content: center; /* Center-align the grid items */
 }
 
@@ -17,7 +24,6 @@
 }
 
 .project-card:hover {
-    transform: translateY(-5px); /* Slight lift on hover */
     background: linear-gradient(135deg, #333333, #444444); /* Darker gradient on hover */
     box-shadow: 0 12px 20px rgba(0, 0, 0, 0.4); /* Stronger shadow on hover */
 }
@@ -84,14 +90,19 @@
 
 /* Responsive Design */
 @media screen and (max-width: 768px) {
+
+    .project--container{
+        width: 90%;
+        margin: 0 auto;
+        text-align: left;
+    }
+    
     .projects-grid {
         grid-template-columns: 1fr; /* One column for tablets */
-        gap: 15px;
-        padding: 0 15px; /* Add padding for better spacing */
     }
 
     .project-card {
-        max-width: 90%; /* Shrink card width on tablets */
+        max-width: 100%; /* Shrink card width on tablets */
         margin: 0 auto; /* Center the cards */
     }
 

@@ -51,7 +51,7 @@
   flex-direction: column;
   justify-content: space-around;
   position: absolute;
-  top: 25px;
+  top: 12px;
   right: 25px;
 }
 
@@ -66,10 +66,11 @@
 /* Responsive Design */
 @media screen and (max-width: 1500px) {
   .navbar {
-    height: 5%;
-    width: 30%;
-    background: rgb(31, 31, 31);  /* Increase transparency */
-    backdrop-filter: blur(10px); /* Add blur for a frosted effect */
+    height: 3%; /* Shrink the height */
+    width: 25%; /* Shrink the width */
+    padding: 10px 50px; /* Reduce padding */
+    background: rgb(31, 31, 31);  /* Maintain transparency */
+    backdrop-filter: blur(10px); /* Frosted effect */
     box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.2); /* Subtle shadow */
   }
 
@@ -83,8 +84,8 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    background: rgb(31, 31, 31); /* Dark background with transparency */
-    backdrop-filter: blur(8px); /* Frosted effect for blending */
+    background: rgb(31, 31, 31); /* Dark background */
+    backdrop-filter: blur(8px); /* Frosted effect */
     top: -60rem;
     left: 0;
     width: 100%;
@@ -96,14 +97,14 @@
     flex-direction: column;
     align-items: center;
     width: 80%;
-    padding: 3rem 0 0.6rem;
+    padding: 2rem 0 0.5rem; /* Reduce padding */
   }
 
   .navbar--items ul li {
     text-align: center;
     width: 100%;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.1); /* Use lighter color for better visibility */
-    padding: 10px 0;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1); /* Use lighter color */
+    padding: 8px 0; /* Reduce padding for items */
   }
 
   .navbar--items ul li:last-child {
@@ -111,14 +112,14 @@
   }
 
   .navbar--items ul li a {
-    padding: 0.5rem;
+    padding: 0.4rem; /* Reduce padding for links */
     display: block;
-    color: rgba(255, 255, 255, 0.9); /* Slightly opaque text for blending */
+    color: rgba(255, 255, 255, 0.9); /* Slightly opaque text */
     transition: color 0.3s ease;
   }
 
   .navbar--items.active {
-    top: 30px;
+    top: 20px; /* Adjust position when active */
   }
 
   .nav__hamburger.active :nth-child(1) {
@@ -133,7 +134,3 @@
     transform: rotate(-45deg) translate(0.45rem, -0.1875rem);
   }
 }
-
-
-
-

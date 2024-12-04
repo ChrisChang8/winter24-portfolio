@@ -19,97 +19,32 @@ p {
 }
 
 :root {
-  --primary: #101313;
+  --primary: #121414;
   --secondary: #ffffff;
   --border: #292b2c;
   --lightGray: #808080;
   --bg-shade: #9dc0a1;
-  --github: #28382c;
   --darkBrown: #383023;
   --black: #000000;
   --white: #ffffff;
-}
-
-.btn {
-  font-family: "Roboto", sans-serif;
-  display: inline-block;
-  padding: 14px 32px;
-  font-size: 16px;
-  font-style: normal;
-  font-weight: 400;
-  line-height: 24px;
-  cursor: pointer;
-  text-align: center;
-  text-decoration: none;
-  border-radius: 4px;
-  -webkit-border-radius: 5px;
-  -moz-border-radius: 5px;
-  -ms-border-radius: 5px;
-  -o-border-radius: 5px;
-  transition: background-color 0.5s;
-  -webkit-transition: background-color 0.5s;
-  -moz-transition: background-color 0.5s;
-  -ms-transition: background-color 0.5s;
-  -o-transition: background-color 0.5s;
-}
-
-.btn-outline-primary {
-  color: var(--primary);
-  background-color: var(--white);
-  border: 1px solid var(--primary);
-}
-
-.btn-outline-primary:hover {
-  color: var(--white);
-  background-color: var(--primary);
-}
-
-.btn-primary {
-  color: var(--white);
-  background-color: var(--primary);
-  border: 1px solid var(--primary);
-}
-
-.btn-primary:hover {
-  color: var(--primary);
-  background-color: var(--white);
-}
-
-.btn-github {
-  color: var(--white);
-  background-color: var(--github);
-  border: var(--github);
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  align-items: center;
-  box-shadow: 0 1px 2px 0 rgba(16, 24, 40, 0.95);
-  gap: 16px;
-}
-
-.btn-github:hover{
-  color:var(--github);
-  background-color: var(--white);
 }
 /* GLOBAL CSS ENDS */
 
 
 /* Main Headings */
-/* Heading 1 */
+
 h1 {
   font-size: 56px;
   font-weight: 700;
   line-height: 67px;
 }
 
-/* Heading 2 */
 h2 {
   font-size: 48px;
   font-weight: 700;
   line-height: 58px;
 }
 
-/* Heading 3 */
 h3 {
   font-size: 24px;
   font-weight: 700;
@@ -117,7 +52,6 @@ h3 {
 }
 
 /* Paragraphs text large medium small */
-/* Body 1 */
 .text-lg {
   color: var(--heading-color);
   font-size: 18px;
@@ -126,7 +60,6 @@ h3 {
   line-height: 27px;
 }
 
-/* Body 2 */
 .text-md {
   color: var(--heading-color);
   font-size: 16px;
@@ -135,7 +68,6 @@ h3 {
   line-height: 24px;
 }
 
-/* Body 3 */
 .text-sm {
   color: var(--black);
   font-size: 14px;
@@ -144,22 +76,12 @@ h3 {
   line-height: 21px;
 }
 
-
 .section-title {
   font-size: 2.5rem;
   font-weight: bold;
   text-align: left;
   margin-bottom: 30px;
   color: var(--white);
-}
-
-
-/* General container for limiting width */
-.container {
-  width: 40%; /* Default width for smaller screens */
-  max-width: 1200px; /* Limit maximum width */
-  margin: 0 auto;
-  text-align: left;
 }
 
 /* Title and Icons Alignment */
@@ -171,3 +93,12 @@ h3 {
   width: 100%;
   gap: 15px; /* Add spacing between items when wrapping */
 }
+
+/* General container for limiting width */
+.container {
+  width: 40%; /* Default width for smaller screens */
+  max-width: 1200px; /* Limit maximum width */
+  margin: 0 auto;
+  text-align: left;
+}
+

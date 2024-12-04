@@ -103,7 +103,7 @@ export default function HeroSection() {
                         {/* Hero Description */}
                         <p className="hero--section--description" style={{ marginTop: '10px' }}>
                         I'm a 21-year-old developer with 5 years of experience, 
-                        graduating in May 2026 with a bachelor's from UT Dallas.
+                        graduating in May 2026 with a Computer Science bachelor's from UT Dallas.
                         </p>
                         <p className="hero--section--description" style={{ marginTop: '10px' }}>
                             I specialize in... <span className="typing-effect">{currentWord}</span>

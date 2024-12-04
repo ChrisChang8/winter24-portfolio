@@ -31,8 +31,7 @@ const projects = [
 
 export default function Project() {
   return (
-    <section id="myProjects" className="projects-section">
-      <div className="container">
+    <section id="myProjects" className="project--container">
         <h2 className="section-title">Projects</h2>
         <div className="projects-grid">
           {projects.map((project) => (
@@ -62,7 +61,6 @@ export default function Project() {
             </div>
           ))}
         </div>
-      </div>
     </section>
   );
 }
