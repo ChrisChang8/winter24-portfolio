@@ -1,0 +1,139 @@
+/* Navbar Style Start */
+.navbar {
+  display: flex;
+  justify-content: center; /* Center content horizontally */
+  align-items: center;
+  padding: 15px 85.333px;
+  width: 20%; /* Makes the navbar narrower */
+  margin: 30px auto; /* Adds gap at the top and centers the navbar */
+  background: rgba(255, 255, 255, 0.1); /* Semi-transparent background */
+  backdrop-filter: blur(10px); /* Adds a frosted glass effect */
+  box-shadow: 0px 5.333px 80px 0 rgba(0, 0, 0, 0.1); /* Optional shadow */
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 40; /* Ensures navbar stays on top */
+  border-radius: 16px; /* Rounded corners */
+}
+
+.navbar--items ul {
+  list-style: none;
+  display: flex;
+  align-items: flex-start;
+  gap: 42.667px;
+  margin: 0;              /* Removes any default margins */
+  padding: 0;             /* Removes any default padding */
+}
+
+.navbar--items ul li a {
+  text-decoration: none;
+  color: var(--white); /* Adjust text color for contrast */
+  transition: color 0.3s ease, transform 0.3s ease; /* Smooth transition */
+  cursor: pointer;
+}
+
+/* Hover Effect for Links */
+.navbar--items ul li a:hover {
+  transform: scale(1.2); /* Slight hover zoom */
+}
+
+/* Active Link Styling */
+.navbar--items ul li a.navbar--active-content {
+  font-weight: 700; /* Optional bold for active links */
+}
+
+/* Hamburger menu */
+.nav__hamburger {
+  display: none;
+  width: 1.875rem;
+  height: 1.313rem;
+  flex-direction: column;
+  justify-content: space-around;
+  position: absolute;
+  top: 25px;
+  right: 25px;
+}
+
+.nav__hamburger__line {
+  height: 0.188rem;
+  width: 100%;
+  background-color: #ffffff;
+  border-radius: 0.625rem;
+  transition: all ease-in-out 0.2s;
+}
+
+/* Responsive Design */
+@media screen and (max-width: 1500px) {
+  .navbar {
+    height: 5%;
+    width: 30%;
+    background: rgb(31, 31, 31);  /* Increase transparency */
+    backdrop-filter: blur(10px); /* Add blur for a frosted effect */
+    box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.2); /* Subtle shadow */
+  }
+
+  .nav__hamburger {
+    display: flex;
+    z-index: 200;
+  }
+
+  .navbar--items {
+    position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgb(31, 31, 31); /* Dark background with transparency */
+    backdrop-filter: blur(8px); /* Frosted effect for blending */
+    top: -60rem;
+    left: 0;
+    width: 100%;
+    transition: all ease-in-out 0.4s;
+    border-radius: 16px;
+  }
+
+  .navbar--items ul {
+    flex-direction: column;
+    align-items: center;
+    width: 80%;
+    padding: 3rem 0 0.6rem;
+  }
+
+  .navbar--items ul li {
+    text-align: center;
+    width: 100%;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1); /* Use lighter color for better visibility */
+    padding: 10px 0;
+  }
+
+  .navbar--items ul li:last-child {
+    border-bottom: none;
+  }
+
+  .navbar--items ul li a {
+    padding: 0.5rem;
+    display: block;
+    color: rgba(255, 255, 255, 0.9); /* Slightly opaque text for blending */
+    transition: color 0.3s ease;
+  }
+
+  .navbar--items.active {
+    top: 30px;
+  }
+
+  .nav__hamburger.active :nth-child(1) {
+    transform: rotate(45deg) translate(0.45rem, 0.1875rem);
+  }
+
+  .nav__hamburger.active :nth-child(2) {
+    opacity: 0;
+  }
+
+  .nav__hamburger.active :nth-child(3) {
+    transform: rotate(-45deg) translate(0.45rem, -0.1875rem);
+  }
+}
+
+
+
+

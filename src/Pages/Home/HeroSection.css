@@ -1,0 +1,139 @@
+/* Hero Section Styles */
+.hero--section {
+    color: #fff;
+    text-align: center;
+    padding: 10px 0;
+}
+
+.hero--section--content {
+    border: 2px solid var(--border);
+    border-radius: 10px;
+    padding: 15px;
+}
+
+/* Hero Section Description */
+.hero--section--description {
+    font-size: 1.2rem;
+}
+
+/* Location Styles */
+.location {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    font-size: 1rem; /* Adjust for smaller screens */
+    color: var(--lightGray);
+}
+
+.pin-icon {
+    width: 20px;
+    height: 20px;
+    margin-right: 8px;
+    color: var(--lightGray);
+}
+
+/* Social Icons */
+.social-icons {
+    display: flex;
+    gap: 10px;
+    justify-content: flex-end;
+    flex-wrap: wrap; /* Allow icons to wrap on smaller screens */
+}
+
+.icon {
+    width: 24px;
+    height: 24px;
+    color: var(--white);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    padding: 7px;
+    transition: transform 0.2s ease, border-color 0.2s ease;
+    cursor: pointer;
+}
+
+.icon:hover {
+    transform: scale(1.2);
+}
+
+/* Responsive Design */
+@media screen and (max-width: 768px) {
+    .container {
+        width: 95%; /* Increase width for smaller screens */
+    }
+
+    .hero--section--description {
+        font-size: 1rem; /* Reduce font size for smaller screens */
+    }
+
+    .title-row {
+        flex-direction: column; /* Stack title and icons vertically */
+        align-items: center;
+        text-align: center; /* Center-align text */
+    }
+
+    .social-icons {
+        justify-content: center; /* Center icons */
+    }
+
+    .location {
+        font-size: 0.9rem; /* Adjust font size */
+    }
+
+    .pin-icon {
+        width: 18px; /* Adjust icon size */
+        height: 18px;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .icon {
+        width: 20px;
+        height: 20px;
+        padding: 5px;
+    }
+
+    .hero--section {
+        padding: 5px 0;
+    }
+
+    .hero--section--content {
+        padding: 10px;
+    }
+
+    .hero--section--description {
+        font-size: 0.9rem;
+    }
+
+    .location {
+        font-size: 0.8rem;
+    }
+
+    .pin-icon {
+        width: 16px;
+        height: 16px;
+        margin-right: 5px;
+    }
+}
+
+.typing-effect {
+    font-weight: bold;
+    color: #96ffa4; /* Highlight color for animated words */
+}
+
+.cursor {
+    display: inline-block;
+    background-color: #000000; /* Matches word highlight */
+    width: 2px;
+    height: 1em;
+    margin-left: 5px;
+    animation: blink 0.4s infinite;
+}
+
+@keyframes blink {
+    0%, 50% {
+        opacity: 1;
+    }
+    51%, 100% {
+        opacity: 0;
+    }
+}
