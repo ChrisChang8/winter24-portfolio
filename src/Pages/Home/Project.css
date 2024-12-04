@@ -87,8 +87,14 @@
 }
 
 
-
 /* Responsive Design */
+
+@media screen and (max-width: 1500px) {
+    .project--container{
+        width: 70%;
+    }
+  }
+
 @media screen and (max-width: 768px) {
 
     .project--container{
@@ -99,6 +105,8 @@
     
     .projects-grid {
         grid-template-columns: 1fr; /* One column for tablets */
+        width: 100%;
+        max-width: 100%;
     }
 
     .project-card {
@@ -124,12 +132,9 @@
 }
 
 @media screen and (max-width: 480px) {
-    .projects-grid {
-        padding: 0 10px; /* Reduce padding for smaller screens */
-    }
 
     .project-card {
-        max-width: 95%; /* Further shrink card width on mobile */
+        max-width: 100%; /* Further shrink card width on mobile */
         margin: 0 auto; /* Center the cards */
     }
 
