@@ -102,6 +102,7 @@ h3 {
   text-align: left;
 }
 
+
 @media screen and (max-width: 1500px) {
   .container{
       width: 70%;

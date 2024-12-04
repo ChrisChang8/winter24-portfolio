@@ -66,13 +66,14 @@
     }
 
     .title-row {
-        flex-direction: column; /* Stack title and icons vertically */
-        align-items: center;
-        text-align: center; /* Center-align text */
+        flex-direction: left; /* Stack title and icons vertically */
+        align-items: left;
+        text-align: left; /* Center-align text */
     }
 
     .social-icons {
         justify-content: center; /* Center icons */
+        margin-bottom: 10px;
     }
 
     .location {
