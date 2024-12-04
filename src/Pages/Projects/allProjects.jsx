@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
 import './allProjects.css';
-import Footer from '../Home/Footer';
 
 const projectData = [
   {
