@@ -9,7 +9,6 @@ export default function Home() {
             <HeroSection />
             <ExpTools/>
             <Project/>
-            <Footer/>
         </>
     );
 }

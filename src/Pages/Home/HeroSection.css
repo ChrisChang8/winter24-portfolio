@@ -121,7 +121,7 @@
     color: #96ffa4; /* Highlight color for animated words */
 }
 
-.cursor {
+.type-cursor {
     display: inline-block;
     background-color: #000000; /* Matches word highlight */
     width: 2px;

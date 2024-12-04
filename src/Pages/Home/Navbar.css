@@ -22,11 +22,12 @@
   display: flex;
   align-items: flex-start;
   gap: 42.667px;
-  margin: 0;              /* Removes any default margins */
-  padding: 0;             /* Removes any default padding */
+  margin: 0; /* Removes any default margins */
+  padding: 0; /* Removes any default padding */
 }
 
-.navbar--items ul li a {
+.navbar--items ul li a,
+.navbar--items ul li span { /* Apply same styles to both <a> and <span> */
   text-decoration: none;
   color: var(--white); /* Adjust text color for contrast */
   transition: color 0.3s ease, transform 0.3s ease; /* Smooth transition */
@@ -34,12 +35,14 @@
 }
 
 /* Hover Effect for Links */
-.navbar--items ul li a:hover {
-  transform: scale(1.1); /* Slight hover zoom */
+.navbar--items ul li a:hover,
+.navbar--items ul li span:hover {
+  color: rgba(255, 255, 255, 0.6); /* Slightly dim the color on hover */
 }
 
 /* Active Link Styling */
-.navbar--items ul li a.navbar--active-content {
+.navbar--items ul li a.navbar--active-content,
+.navbar--items ul li span.navbar--active-content { /* Active styles for both <a> and <span> */
   font-weight: 700; /* Optional bold for active links */
 }
 
@@ -68,7 +71,7 @@
     height: 3%; /* Shrink the height */
     width: 25%; /* Shrink the width */
     padding: 10px 50px; /* Reduce padding */
-    background: rgb(31, 31, 31);  /* Maintain transparency */
+    background: rgb(31, 31, 31); /* Maintain transparency */
     backdrop-filter: blur(10px); /* Frosted effect */
     box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.2); /* Subtle shadow */
   }
@@ -110,7 +113,8 @@
     border-bottom: none;
   }
 
-  .navbar--items ul li a {
+  .navbar--items ul li a,
+  .navbar--items ul li span {
     padding: 0.4rem; /* Reduce padding for links */
     display: block;
     color: rgba(255, 255, 255, 0.9); /* Slightly opaque text */

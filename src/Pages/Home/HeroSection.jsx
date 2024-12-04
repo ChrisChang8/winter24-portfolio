@@ -108,7 +108,7 @@ export default function HeroSection() {
                         </p>
                         <p className="hero--section--description" style={{ marginTop: '10px' }}>
                             I specialize in... <span className="typing-effect">{currentWord}</span>
-                            <span className="cursor">|</span>
+                            <span className="type-cursor">|</span>
                         </p>
                     </div>
                 </div>

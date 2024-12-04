@@ -10,7 +10,6 @@ const projects = [
     description: "User-friendly overlay designed for Valorant players, providing an intuitive timer for spike plants that enhances in-game awareness.",
     link: "https://github.com/ChrisChang8/spikeBeta-1.5",
   },
-  // Add more project objects here for dynamic rendering
   {
     id: 2,
     title: "Buckingham Court Apt. Website",
@@ -26,13 +25,15 @@ const projects = [
     techStack: ["HTML", "CSS", "JSON", "JavaScript", "Google Extension"],
     description: "Google Chrome extension tool that automates the extraction of business details from Google Maps, including address, websites, etc. Designed for client outreach and lead generation.",
     link: "https://github.com/ChrisChang8/Google-Maps-Lead-Scraper",
-  }
+  },
 ];
 
 export default function Project() {
   return (
     <section id="myProjects" className="project--container">
-        <h2 className="section-title">Projects</h2>
+        <div className="section-header">
+            <h2 className="section-title">Projects</h2>
+        </div>
         <div className="projects-grid">
           {projects.map((project) => (
             <div className="project-card" key={project.id}>
@@ -60,6 +61,12 @@ export default function Project() {
               </div>
             </div>
           ))}
+          <a 
+            href="/allProjects" 
+            className="view-all-button"
+          >
+            View All Projects →
+          </a>
         </div>
     </section>
   );
