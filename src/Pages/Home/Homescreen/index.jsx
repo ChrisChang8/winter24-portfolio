@@ -1,5 +1,4 @@
 import ExpTools from "../expTools";
-import Footer from "../Footer";
 import HeroSection from "../HeroSection";
 import Project from "../Project";
 
