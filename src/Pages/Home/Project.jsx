@@ -12,7 +12,7 @@ const projects = [
   },
   {
     id: 2,
-    title: "Buckingham Court Apt. Website",
+    title: "Buckingham Court Apt.",
     image: "./img/bk.png",
     techStack: ["React", "Azure", "JavaScript", "Node.js", "Spring"],
     description: "Developed a responsive cloud-based apartment website attracting 1,500+ views and boosting local engagement and bookings by 20%.",
@@ -20,12 +20,20 @@ const projects = [
   },
   {
     id: 3,
-    title: "Google Maps Lead Scraper Extension",
+    title: "Google Maps Lead Scraper",
     image: "./img/gg.png",
     techStack: ["HTML", "CSS", "JSON", "JavaScript", "Google Extension"],
     description: "Google Chrome extension tool that automates the extraction of business details from Google Maps, including address, websites, etc. Designed for client outreach and lead generation.",
     link: "https://github.com/ChrisChang8/Google-Maps-Lead-Scraper",
   },
+  {
+    id: 4,
+    title: "John's Donut 2",
+    image: "./img/donut.png",
+    techStack: ["HTML", "CSS", "Next.js", "JavaScript", "Website"],
+    description: "A visually appealing and user-friendly website designed for a local donut shop to showcase their menu, attract more customers, and increase online engagement.",
+    link: "https://clever-bombolone-b35e2a.netlify.app/",
+  }
 ];
 
 export default function Project() {

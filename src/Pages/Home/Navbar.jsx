@@ -91,7 +91,7 @@ function Navbar() {
                     <li>
                         <span
                             className="navbar--content"
-                            onClick={() => handleNavClick("myProjects")}
+                            onClick={() => (window.location.href = "/allProjects")}
                         >
                             Projects
                         </span>

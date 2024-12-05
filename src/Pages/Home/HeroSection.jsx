@@ -107,7 +107,7 @@ export default function HeroSection() {
                         graduating in May 2026 with a Computer Science bachelor's from UT Dallas.
                         </p>
                         <p className="hero--section--description" style={{ marginTop: '10px' }}>
-                            I specialize in... <span className="typing-effect">{currentWord}</span>
+                            Specialties: <span className="typing-effect">{currentWord}</span>
                             <span className="type-cursor">|</span>
                         </p>
                     </div>

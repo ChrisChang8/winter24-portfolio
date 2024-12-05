@@ -7,12 +7,15 @@
 
 .projects-grid {
     display: grid;
-    grid-template-columns: 1fr; /* Two projects per row */
+    grid-template-columns: repeat(2, 1fr); /* Two equal columns */
     gap: 20px; /* Space between rows and columns */
     justify-content: center; /* Center-align the grid items */
 }
 
 .project-card {
+    display: flex;
+    flex-direction: column; /* Stack content vertically */
+    justify-content: space-between; /* Ensure space distribution */
     background: linear-gradient(135deg, #1e1e1e, #2a2a2a); /* Subtle gradient background */
     border-radius: 15px; /* Increased rounding for a modern look */
     overflow: hidden;
@@ -22,6 +25,28 @@
     max-width: 100%; /* Prevent cards from exceeding screen width */
     width: 100%; /* Allow card to take available space */
 }
+
+.project-content {
+    padding: 20px;
+    display: flex;
+    flex-direction: column; /* Stack content */
+    flex-grow: 1; /* Allow the content to expand */
+}
+
+.learn-more {
+    margin-top: auto; /* Push the button to the bottom */
+    align-self: flex-start; /* Align to bottom-left */
+    display: inline-block;
+    font-size: 1em;
+    font-weight: bold;
+    color: #ffffff; /* Highlighted color for links */
+    text-decoration: none;
+    padding: 8px 12px;
+    border: 1px solid #ffffff;
+    border-radius: 5px; /* Rounded button style */
+    transition: background 0.3s ease, color 0.3s ease;
+}
+
 
 .project-card:hover {
     background: linear-gradient(135deg, #333333, #444444); /* Darker gradient on hover */
@@ -64,7 +89,7 @@
 
 .description {
     font-size: 1em;
-    line-height: 1.6; /* Slightly increased line height for better readability */
+    line-height: 1.4; /* Slightly increased line height for better readability */
     color: #cccccc;
     margin-bottom: 15px;
 }
