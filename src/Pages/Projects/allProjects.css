@@ -93,6 +93,12 @@
     border-radius: 5px;
     font-size: 0.9em;
   }
+
+  @media screen and (max-width: 1500px) {
+    .all-projects-container{
+        max-width: 70%;
+    }
+  }
   
   /* Responsive Design for Smaller Screens */
   @media (max-width: 768px) {
