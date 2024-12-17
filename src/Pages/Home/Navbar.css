@@ -118,7 +118,7 @@
   }
 
   .navbar--items.active {
-    top: 20px; /* Adjust position when active */
+    top: 15px; /* Adjust position when active */
   }
 
   .nav__hamburger.active :nth-child(1) {

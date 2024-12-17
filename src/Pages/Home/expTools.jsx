@@ -80,10 +80,12 @@ export default function ExpTools() {
                         <div className="timeline-item green-timeline">
                             <div className="timeline-content">
                                 <h3>AI Software Engineer Intern | MeshTek</h3>
-                                <p className="position">August 2024 – Present</p>
-                                <p className="description">
-                                    Built a Generative AI model with Text-To-Speech for Android, enhancing 100+ RGB commands. Improved user speech error detection by 21.3% and model accuracy to 95.4%. Streamlined data flow by writing and filtering 100+ JSON files, achieving 96.4% model accuracy.
-                                </p>
+                                <p className="position">August 2024 – December 2024</p>
+                                <ul className="description">
+                                    <li>Built a Generative AI model with Text-To-Speech for an Android application.</li>
+                                    <li>Improved user speech error detection by 21.3% &  model accuracy to 95.4%.</li>
+                                    <li>Streamlined data flow by writing and filtering 100+ JSON files.</li>
+                                </ul>
                             </div>
                         </div>
                         {/* Lead Coding Instructor */}
@@ -91,9 +93,11 @@ export default function ExpTools() {
                             <div className="timeline-content">
                                 <h3>Lead Coding Instructor | Youth Tech Inc.</h3>
                                 <p className="position">May 2024 – August 2024</p>
-                                <p className="description">
-                                    Taught web development (HTML, CSS, C++) and created 6+ interactive UIs. Led game design projects using Python/Java with 50+ assets. Mentored 100+ students in robotics, programming, and autonomous navigation.
-                                </p>
+                                <ul className="description">
+                                    <li>Taught web development (HTML, CSS, C++).</li>
+                                    <li>Led game design projects using Python/Java with 50+ assets.</li>
+                                    <li>Mentored 100+ students in robotics, programming, and autonomous navigation.</li>
+                                </ul>
                             </div>
                         </div>
                         {/* Data Analyst */}
@@ -101,9 +105,11 @@ export default function ExpTools() {
                             <div className="timeline-content">
                                 <h3>Data Analyst | Buckingham Court Apartments</h3>
                                 <p className="position">March 2023 – August 2023</p>
-                                <p className="description">
-                                    Automated tenant rent rolls and expense reports, saving 100+ hours/month. Forecasted repair costs, cutting expenses by 4%. Optimized financial models for better forecasting and timelines.
-                                </p>
+                                <ul className="description">
+                                    <li>Automated tenant rent rolls and expense reports, saving 100+ hours/month.</li>
+                                    <li>Forecasted repair costs, cutting expenses by 4%.</li>
+                                    <li>Optimized financial models for better forecasting and timelines.</li>
+                                </ul>
                             </div>
                         </div>
                     </div>
