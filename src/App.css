@@ -19,14 +19,11 @@ p {
 }
 
 :root {
-  --primary: #121414;
-  --secondary: #ffffff;
-  --border: #292b2c;
-  --lightGray: #808080;
-  --bg-shade: #9dc0a1;
-  --darkBrown: #383023;
-  --black: #000000;
+  --black: #101010;
   --white: #ffffff;
+  --gray: #CCCCCC;
+  --darkGray: #666666;
+  --lightGray: #F0F0F0;
 }
 /* GLOBAL CSS ENDS */
 
@@ -102,10 +99,41 @@ h3 {
   text-align: left;
 }
 
+/* Custom Scrollbar Styling */
+::-webkit-scrollbar {
+  width: 8px; /* Width of the scrollbar */
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: var(--border); /* Dark theme color for the scrollbar */
+  border-radius: 10px; /* Rounded corners for a smoother look */
+  border: 2px solid var(--primary); /* Adds padding effect */
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background-color: var(--lighterGray); /* Lighter gray on hover for contrast */
+}
+
+::-webkit-scrollbar-track {
+  background-color: var(--primary); /* Matches the dark theme */
+  border-radius: 10px;
+}
+
+/* For Firefox */
+body {
+  scrollbar-width: thin; /* Minimal width */
+  scrollbar-color: var(--border) var(--primary); /* Thumb and track colors */
+}
+
+/* Optional: Adjust for Windows devices */
+html {
+  -ms-overflow-style: none; /* Disables the scrollbar styling for IE/Edge */
+}
+
 
 @media screen and (max-width: 1500px) {
   .container{
-      width: 70%;
+      width: 60%;
   }
 }
 

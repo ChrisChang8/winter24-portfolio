@@ -1,116 +1,83 @@
+import React, { useEffect } from 'react';
 import './expTools.css';
 
 export default function ExpTools() {
+    useEffect(() => {
+        const observer = new IntersectionObserver(
+            (entries) => {
+                entries.forEach((entry) => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('active'); // Add the 'active' class
+                    } else {
+                        entry.target.classList.remove('active'); // Remove it when out of view
+                    }
+                });
+            },
+            { threshold: 0.2 } // Trigger when 20% of the element is visible
+        );
+
+        const elements = document.querySelectorAll('.fade-up');
+        elements.forEach((el) => observer.observe(el));
+
+        // Clean up the observer when the component unmounts
+        return () => {
+            elements.forEach((el) => observer.unobserve(el));
+        };
+    }, []);
+
     return (
-        <section id="myTools" className="skills-experience-section">
+        <section id="myWork" className="experience-section">
             <div className="container">
-                <div className="skills-section">
-                    <h2 className="section-title">Tools</h2>
-                    <div className="skills-icons">
-                        <div className="skill-item">
-                            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg" alt="NodeJS" />
-                            <p>NodeJS</p>
+                <h1 className="section-title">Experiences.</h1>
+                <div className="experience-cards">
+                    {/* MeshTek */}
+                    <div className="experience-card fade-up">
+                        <div className="tags-row">
+                            <span className="tag">AI Development</span>
+                            <span className="tag">Internship</span>
                         </div>
-                        <div className="skill-item">
-                            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/supabase/supabase-original.svg" alt="Supabase" />
-                            <p>Supabase</p>
-                        </div>
-                        <div className="skill-item">
-                            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mongodb/mongodb-original.svg" alt="MongoDB" />
-                            <p>MongoDB</p>
-                        </div>
-                        <div className="skill-item">
-                            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg" alt="ReactJS" />
-                            <p>ReactJS</p>
-                        </div>
-                        <div className="skill-item">
-                            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/azure/azure-original.svg" alt="Azure" />
-                            <p>Azure</p>
-                        </div>
-                        <div className="skill-item">
-                            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/vite/vite-original.svg" alt="Vite" />
-                            <p>Vite</p>
-                        </div>
-                        <div className="skill-item">
-                            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/typescript/typescript-original.svg" alt="TypeScript" />
-                            <p>TypeScript</p>
-                        </div>
-                        <div className="skill-item">
-                            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg" alt="CSS" />
-                            <p>CSS</p>
-                        </div>
-                        <div className="skill-item">
-                            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/postgresql/postgresql-original.svg" alt="PostgreSQL" />
-                            <p>PostgreSQL</p>
-                        </div>
-                        <div className="skill-item">
-                            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/java/java-original.svg" alt="Java" />
-                            <p>Java</p>
-                        </div>
-                        <div className="skill-item">
-                            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg" alt="Python" />
-                            <p>Python</p>
-                        </div>
-                        <div className="skill-item">
-                            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg" alt="JavaScript" />
-                            <p>JavaScript</p>
-                        </div>
-                        <div className="skill-item">
-                            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg" alt="HTML" />
-                            <p>HTML</p>
-                        </div>
-                        <div className="skill-item">
-                            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg" alt="Git" />
-                            <p>Git</p>
-                        </div>
-                        <div className="skill-item">
-                            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/csharp/csharp-original.svg" alt="C#" />
-                            <p>C#</p>
-                        </div>
-                        <div className="skill-item">
-                            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nextjs/nextjs-original.svg" alt="NextJS" />
-                            <p>NextJS</p>
+                        <h3 className="experience-title">
+                            Generative AI and Text-to-Speech Development →
+                        </h3>
+                        <p className="experience-description">
+                            Built a Generative AI model with Text-to-Speech for an Android application, improving speech error detection by 21.3% and model accuracy to 95.4%.
+                        </p>
+                        <div className="company-image">
+                            <img src="https://via.placeholder.com/600x300.png?text=ILUNMI+MESHTEK%0AAUG+24+-+NOV+24." alt="MeshTek" />
                         </div>
                     </div>
-                </div>
-                <div className="experience-section" id="myExp">
-                    <h2 className="section-title">Experiences</h2>
-                    <div className="timeline">
-                        {/* AI Software Engineer Intern */}
-                        <div className="timeline-item green-timeline">
-                            <div className="timeline-content">
-                                <h3>AI Software Engineer Intern | MeshTek</h3>
-                                <p className="position">August 2024 – December 2024</p>
-                                <ul className="description">
-                                    <li>Built a Generative AI model with Text-To-Speech for an Android application.</li>
-                                    <li>Improved user speech error detection by 21.3% &  model accuracy to 95.4%.</li>
-                                    <li>Streamlined data flow by writing and filtering 100+ JSON files.</li>
-                                </ul>
-                            </div>
+
+                    {/* Youth Tech Inc */}
+                    <div className="experience-card fade-up">
+                        <div className="tags-row">
+                            <span className="tag">Web Development</span>
+                            <span className="tag">Mentorship</span>
                         </div>
-                        {/* Lead Coding Instructor */}
-                        <div className="timeline-item yellow-timeline">
-                            <div className="timeline-content">
-                                <h3>Lead Coding Instructor | Youth Tech Inc.</h3>
-                                <p className="position">May 2024 – August 2024</p>
-                                <ul className="description">
-                                    <li>Taught web development (HTML, CSS, C++).</li>
-                                    <li>Led game design projects using Python/Java with 50+ assets.</li>
-                                    <li>Mentored 100+ students in robotics, programming, and autonomous navigation.</li>
-                                </ul>
-                            </div>
+                        <h3 className="experience-title">
+                            Teaching and Mentorship for Young Developers →
+                        </h3>
+                        <p className="experience-description">
+                            Taught web development (HTML, CSS, C++), led game design projects using Python/Java, and mentored 100+ students in robotics and programming.
+                        </p>
+                        <div className="company-image">
+                            <img src="https://via.placeholder.com/600x300.png?text=YOUTH+TECH+INC.%0AMAY+24+-+AUG+24." alt="YT" />
                         </div>
-                        {/* Data Analyst */}
-                        <div className="timeline-item blue-timeline">
-                            <div className="timeline-content">
-                                <h3>Data Analyst | Buckingham Court Apartments</h3>
-                                <p className="position">March 2023 – August 2023</p>
-                                <ul className="description">
-                                    <li>Automated tenant rent rolls and expense reports, saving 100+ hours/month.</li>
-                                    <li>Forecasted repair costs, cutting expenses by 4%.</li>
-                                    <li>Optimized financial models for better forecasting and timelines.</li>
-                                </ul>
-                            </div>
+                    </div>
+
+                    {/* Buckingham Court Apartments */}
+                    <div className="experience-card fade-up">
+                        <div className="tags-row">
+                            <span className="tag">Data Analysis</span>
+                            <span className="tag">Automation</span>
+                        </div>
+                        <h3 className="experience-title">
+                            Financial Modeling and Automation →
+                        </h3>
+                        <p className="experience-description">
+                            Automated tenant rent rolls and expense reports, saving 100+ hours/month, and optimized financial models to cut repair costs by 4%.
+                        </p>
+                        <div className="company-image">
+                            <img src="https://via.placeholder.com/600x300.png?text=BUCKINGHAM+APT.+%0AMAR+23+-+AUG+23." alt="APT" />
                         </div>
                     </div>
                 </div>

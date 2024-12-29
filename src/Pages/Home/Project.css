@@ -1,202 +1,171 @@
-.project--container{
-    width: 40%; /* Default width for smaller screens */
-    max-width: 1200px; /* Limit maximum width */
-    margin: 0 auto;
-    text-align: left;
-}
+/* Project Section Styling */
 
-.projects-grid {
+/* General Section Styling */
+.section-container {
+    width: 90%; /* Slightly wider for more breathing room */
+    max-width: 800px; /* Limit the maximum width */
+    margin: 0 auto; /* Center the container */
+    color: var(--lightGray);
+    box-sizing: border-box; /* Include padding in width calculations */
+    padding: 100px 25px; /* Add padding around the content */
+  }
+  
+  /* Section Title */
+  .section-title {
+    font-size: 3rem;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 60px; /* Add extra space below the title */
+    color: var(--darkGray);
+  }
+  
+  /* Grid Layout */
+  .projects-grid {
     display: grid;
     grid-template-columns: repeat(2, 1fr); /* Two equal columns */
-    gap: 20px; /* Space between rows and columns */
+    gap: 40px; /* Space between rows and columns */
     justify-content: center; /* Center-align the grid items */
-}
-
-.project-card {
+  }
+  
+  /* Project Card */
+  .project-card {
     display: flex;
-    flex-direction: column; /* Stack content vertically */
-    justify-content: space-between; /* Ensure space distribution */
-    background: linear-gradient(135deg, #1e1e1e, #2a2a2a); /* Subtle gradient background */
-    border-radius: 15px; /* Increased rounding for a modern look */
+    flex-direction: column;
+    justify-content: space-between;
+    background-color: var(--lightGray);
+    border-radius: 15px;
     overflow: hidden;
-    transition: transform 0.3s ease, box-shadow 0.3s ease, background 0.3s ease; /* Smooth hover effects */
-    box-shadow: 0 8px 12px rgba(0, 0, 0, 0.2); /* Elevated shadow */
-    cursor: pointer; /* Indicates interactivity */
-    max-width: 100%; /* Prevent cards from exceeding screen width */
-    width: 100%; /* Allow card to take available space */
-}
-
-.project-content {
-    padding: 20px;
-    display: flex;
-    flex-direction: column; /* Stack content */
-    flex-grow: 1; /* Allow the content to expand */
-}
-
-.learn-more {
-    margin-top: auto; /* Push the button to the bottom */
-    align-self: flex-start; /* Align to bottom-left */
-    display: inline-block;
-    font-size: 1em;
-    font-weight: bold;
-    color: #ffffff; /* Highlighted color for links */
-    text-decoration: none;
-    padding: 8px 12px;
-    border: 1px solid #ffffff;
-    border-radius: 5px; /* Rounded button style */
-    transition: background 0.3s ease, color 0.3s ease;
-}
-
-
-.project-card:hover {
-    background: linear-gradient(135deg, #333333, #444444); /* Darker gradient on hover */
-    box-shadow: 0 12px 20px rgba(0, 0, 0, 0.4); /* Stronger shadow on hover */
-}
-
-.project-image img {
+    padding: 15px; /* Add padding inside the card */
+    opacity: 0; /* Initially hidden for animation */
+    transform: translateY(50px); /* Start slightly below */
+    transition: opacity 0.6s ease, transform 0.6s ease;
+  }
+  
+  /* When the card becomes visible */
+  .project-card.visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  
+  /* Project Image */
+  .project-image {
     width: 100%;
-    height: 200px;
-    object-fit: cover;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.1); /* Soft divider between image and content */
-}
-
-.project-content {
-    padding: 20px;
-}
-
-.project-content h3 {
+    height: 220px; /* Increased height for a better balance */
+    background-size: cover;
+    background-position: center;
+    border-radius: 10px;
+    border-bottom: 1px solid var(--darkGray); /* Subtle separator */
+    margin-bottom: 15px; /* Add space below the image */
+  }
+  
+  /* Project Content */
+  .project-content {
+    padding: 15px; /* Adjusted padding inside content */
+  }
+  
+  .project-content h3 {
     font-size: 1.5em;
     margin-bottom: 10px;
-    color: #ffffff;
-    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.4); /* Add subtle text shadow */
-}
-
-.tech-stack {
+    color: var(--black);
+  }
+  
+  .project-content .description {
+    font-size: 1em;
+    color: var(--black);
+    margin-bottom: 15px;
+  }
+  
+  .tech-stack {
     display: flex;
     flex-wrap: wrap;
     gap: 10px;
     margin-bottom: 15px;
-}
-
-.tech-icon {
-    background-color: #444444; /* Darker icon background */
-    color: #ffffff;
-    padding: 5px 10px;
-    border-radius: 5px; /* Rounded corners for icons */
-    font-size: 0.9em;
-}
-
-
-.description {
-    font-size: 1em;
-    line-height: 1.4; /* Slightly increased line height for better readability */
-    color: #cccccc;
-    margin-bottom: 15px;
-}
-
-.learn-more {
-    display: inline-block;
-    font-size: 1em;
-    font-weight: bold;
-    color: #ffffff; /* Highlighted color for links */
-    text-decoration: none;
-    padding: 8px 12px;
-    border: 1px solid #ffffff;
-    border-radius: 5px; /* Rounded button style */
-    transition: background 0.3s ease, color 0.3s ease;
-}
-
-.learn-more:hover {
-    background-color: #ffffff; /* Highlight background on hover */
-    color: #000000; /* Change text color on hover */
-}
-
-.view-all-button {
-    display: inline-block;
-    font-size: 1em;
-    font-weight: bold;
-    color: #ffffff; /* Highlighted color for links */
-    text-decoration: none;
-    padding: 8px 12px;
-    border: 1px solid #ffffff;
-    border-radius: 5px; /* Rounded button style */
-    transition: background 0.3s ease, color 0.3s ease;
   }
   
-  .view-all-button:hover {
-    background-color: #ffffff; /* Highlight background on hover */
-    color: #000000; /* Change text color on hover */
+  .tech-icon {
+    background-color: var(--darkGray);
+    color: var(--white);
+    padding: 5px 10px;
+    border-radius: 5px;
+    font-size: 0.8em;
+  }
+  
+  .learn-more {
+    font-size: 1rem;
+    font-weight: bold;
+    color: var(--black);
+    text-decoration: none;
   }
 
-/* Responsive Design */
-
-@media screen and (max-width: 1500px) {
-    .project--container{
-        width: 68%;
+  @media screen and (max-width: 1200px) {
+    .section-container {
+      width: 65%; /* Slightly more width for smaller screens */
+      padding: 40px 15px; /* Adjust padding for smaller screens */
     }
   }
-
-@media screen and (max-width: 768px) {
-
-    .project--container{
-        width: 87%;
-        margin: 0 auto;
-        text-align: left;
+  
+  /* Responsive Design for Tablets */
+  @media screen and (max-width: 768px) {
+    .section-container {
+      width: 95%; /* Slightly more width for smaller screens */
+      padding: 40px 15px; /* Adjust padding for smaller screens */
     }
-    
+  
     .projects-grid {
-        grid-template-columns: 1fr; /* One column for tablets */
-        width: 100%;
-        max-width: 100%;
+      grid-template-columns: 1fr; /* Single column layout */
+      gap: 30px; /* Maintain spacing */
     }
-
-    .project-card {
-        max-width: 100%; /* Shrink card width on tablets */
-        margin: 0 auto; /* Center the cards */
+  
+    .project-image {
+      height: 200px; /* Adjust image height */
     }
-
-    .project-image img {
-        height: 180px; /* Adjust image height for tablets */
-    }
-
+  
     .project-content h3 {
-        font-size: 1.3em; /* Adjust title font size */
+      font-size: 1.3em; /* Slightly smaller title */
     }
-
-    .description {
-        font-size: 0.9em; /* Adjust description font size */
+  
+    .project-content .description {
+      font-size: 0.9em; /* Adjust description size */
     }
-
-    .learn-more {
-        font-size: 0.9em; /* Adjust link font size */
+  }
+  
+  /* Responsive Design for Mobile */
+  @media screen and (max-width: 480px) {
+    .section-container {
+      width: 90%; /* Full width for small devices */
+      padding: 30px 10px; /* Reduce padding for very small screens */
     }
-}
-
-@media screen and (max-width: 480px) {
-
+  
+    .projects-grid {
+      grid-template-columns: 1fr; /* Single column layout */
+      gap: 20px; /* Reduce gap for small screens */
+    }
+  
     .project-card {
-        max-width: 100%; /* Further shrink card width on mobile */
-        margin: 0 auto; /* Center the cards */
+      padding: 10px; /* Smaller padding inside the card */
+      border-radius: 10px; /* Reduce card rounding for compact cards */
     }
-
-    .project-image img {
-        height: 150px; /* Smaller image height for mobile */
+  
+    .project-image {
+      height: 150px; /* Further reduce image height */
+      margin-bottom: 10px; /* Adjust spacing below image */
     }
-
-    .project-content {
-        padding: 15px; /* Reduce padding for mobile */
-    }
-
+  
     .tech-icon {
-        font-size: 0.8em; /* Smaller font size for icons */
-        padding: 4px 8px; /* Adjust padding for icons */
+      font-size: 0.75em; /* Smaller font size for tags */
+      padding: 4px 8px; /* Adjust padding for tags */
     }
-
-    .description {
-        font-size: 0.8em; /* Adjust description font size */
+  
+    .project-content h3 {
+      font-size: 1.2em; /* Adjust title size */
     }
-
+  
+    .project-content .description {
+      font-size: 0.8em; /* Adjust description size */
+    }
+  
     .learn-more {
-        font-size: 0.8em; /* Adjust link font size */
+      font-size: 0.8em; /* Adjust link font size */
     }
-}
+  }
+  

@@ -1,135 +1,69 @@
-/* Navbar Style Start */
-.navbar {
+/* Taskbar Styles */
+.taskbar {
   display: flex;
-  justify-content: center; /* Center content horizontally */
+  justify-content: center; /* Center content */
   align-items: center;
-  padding: 15px 85.333px;
-  width: 20%; /* Makes the navbar narrower */
-  margin: 30px auto; /* Adds gap at the top and centers the navbar */
-  background: rgba(255, 255, 255, 0.1); /* Semi-transparent background */
-  backdrop-filter: blur(10px); /* Adds a frosted glass effect */
-  box-shadow: 0px 5.333px 80px 0 rgba(0, 0, 0, 0.1); /* Optional shadow */
-  position: fixed;
+  width: 100%; /* Full-width taskbar */
+  height: 60px; /* Set height for taskbar */
+  position: fixed; /* Stick it to the top */
   top: 0;
   left: 0;
-  right: 0;
-  z-index: 40; /* Ensures navbar stays on top */
-  border-radius: 16px; /* Rounded corners */
+  z-index: 100; /* Ensure it's above other elements */
+  background: rgba(255, 255, 255, 0.8); /* Semi-transparent background */
+  backdrop-filter: blur(10px); /* Add blur effect */
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1); /* Subtle border at the bottom */
 }
 
-.navbar--items ul {
-  list-style: none;
+.taskbar__items {
+  list-style: none; /* Remove bullets */
   display: flex;
-  align-items: flex-start;
-  gap: 42.667px;
-  margin: 0; /* Removes any default margins */
-  padding: 0; /* Removes any default padding */
+  justify-content: space-between; /* Space items evenly */
+  align-items: center;
+  gap: 50px; /* Spacing between links */
+  margin: 0;
+  padding: 0;
 }
 
-.navbar--items ul li a,
-.navbar--items ul li span { /* Apply same styles to both <a> and <span> */
-  text-decoration: none;
-  color: var(--white); /* Adjust text color for contrast */
-  cursor: pointer;
+.taskbar__item {
+  font-size: 16px; /* Adjust font size */
+  color: #777; /* Default text color */
+  cursor: pointer; /* Show pointer on hover */
+  position: relative; /* For underline positioning */
+  text-transform: uppercase;
+  font-weight: 500;
+  transition: color 0.3s ease; /* Smooth color transition */
 }
 
-/* Hover Effect for Links */
-.navbar--items ul li a:hover,
-.navbar--items ul li span:hover {
-  color: rgba(255, 255, 255, 0.6); /* Slightly dim the color on hover */
+.taskbar__item:hover {
+  color: #000; /* Change color on hover */
 }
 
-/* Active Link Styling */
-.navbar--items ul li a.navbar--active-content,
-.navbar--items ul li span.navbar--active-content { /* Active styles for both <a> and <span> */
-  font-weight: 700; /* Optional bold for active links */
+.taskbar__item.active {
+  color: #000; /* Active link color */
+  font-weight: bold;
 }
 
-/* Hamburger menu */
-.nav__hamburger {
-  all: unset; /* Resets all default styles */
-  display: inline-flex;
-  flex-direction: column;
-  justify-content: space-around;
-  width: 24px;
-  height: 24px;
-  cursor: pointer;
+.taskbar__item.active::after {
+  content: ""; /* Add underline for active item */
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: -5px;
+  height: 2px;
+  background: #000; /* Black underline */
+  transition: width 0.3s ease;
+  width: 100%; /* Full width */
 }
 
-.nav__hamburger__line {
-  width: 100%;
-  height: 3px;
-  background-color: #ffffff; /* Replace with your desired color */
-  border-radius: 2px;
+/* Add this to ensure consistency */
+.taskbar__link {
+  text-decoration: none; /* Remove default underline */
+  color: inherit; /* Inherit color from parent */
+  transition: color 0.3s ease; /* Smooth color transition */
 }
 
-/* Responsive Design */
-@media screen and (max-width: 1500px) {
-  .navbar {
-    height: 3%; /* Shrink the height */
-    width: 25%; /* Shrink the width */
-    padding: 10px 50px; /* Reduce padding */
-    background: rgb(31, 31, 31); /* Maintain transparency */
-    backdrop-filter: blur(10px); /* Frosted effect */
-    box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.2); /* Subtle shadow */
-  }
-
-  .nav__hamburger {
-    display: flex;
-    z-index: 200;
-  }
-
-  .navbar--items {
-    position: absolute;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background: rgb(31, 31, 31); /* Dark background */
-    backdrop-filter: blur(8px); /* Frosted effect */
-    top: -60rem;
-    left: 0;
-    width: 100%;
-    border-radius: 16px;
-  }
-
-  .navbar--items ul {
-    flex-direction: column;
-    align-items: center;
-    width: 80%;
-    padding: 2rem 0 0.5rem; /* Reduce padding */
-  }
-
-  .navbar--items ul li {
-    text-align: center;
-    width: 100%;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.1); /* Use lighter color */
-    padding: 8px 0; /* Reduce padding for items */
-  }
-
-  .navbar--items ul li:last-child {
-    border-bottom: none;
-  }
-
-  .navbar--items ul li a,
-  .navbar--items ul li span {
-    padding: 0.4rem; /* Reduce padding for links */
-    display: block;
-    color: rgba(255, 255, 255, 0.9); /* Slightly opaque text */
-  }
-
-  .navbar--items.active {
-    top: 15px; /* Adjust position when active */
-  }
-
-  .nav__hamburger.active :nth-child(1) {
-    transform: rotate(45deg) translate(0.4rem, 0.2rem);
-  }
-
-  .nav__hamburger.active :nth-child(2) {
-    opacity: 0;
-  }
-
-  .nav__hamburger.active :nth-child(3) {
-    transform: rotate(-45deg) translate(0.4rem, -0.2rem);
-  }
+.taskbar__link:hover {
+  color: #000; /* Change color on hover */
 }
+
+

@@ -1,0 +1,185 @@
+/* Section Styling */
+.skills-experience-section {
+    padding: 0px 0px; /* Add padding for smaller screens */
+}
+
+/* Skills Section */
+.skills-section {
+    text-align: center;
+    margin-bottom: 30px; /* Reduce margin for smaller screens */
+}
+
+.section-title {
+    text-align: center; /* Centers inline content */
+    display: flex; /* Enables flexbox for advanced centering */
+    justify-content: center; /* Centers content horizontally */
+    align-items: center; /* Centers content vertically */
+    color: var(--lighterGray);
+}
+
+.skills-icons {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(60px, 1fr)); /* Adjust column size for responsiveness */
+    gap: 10px; /* Reduce gap for smaller screens */
+    justify-items: center;
+    align-items: center;
+}
+
+.skill-item {
+    text-align: center;
+}
+
+.skill-item img {
+    width: 40px; /* Reduce icon size for smaller screens */
+    height: 40px;
+    transition: transform 0.3s ease, filter 0.3s ease;
+}
+
+.skill-item p {
+    margin-top: 5px;
+    font-size: 12px; /* Reduce font size for smaller screens */
+    font-weight: bold;
+    color: var(--lighterGray);
+}
+
+/* Experience Section */
+.experience-section {
+    margin-top: 30px; /* Reduce margin for smaller screens */
+}
+
+.timeline {
+    margin: 20px 0;
+    border-left: 2px solid var(--white); /* Reduce border width */
+}
+
+/* Default Timeline Item */
+.timeline-item {
+    border-left: 5px solid transparent;
+    padding-left: 20px;
+    margin-bottom: 20px;
+}
+
+/* Specific Colors */
+.white-timeline {
+    border-left-color: var(--white); /* Yellow */
+}
+
+
+.timeline-content {
+    margin-left: 20px; /* Adjust margin for smaller screens */
+    padding: 8px 10px; /* Adjust padding */
+    background-color: var(--border);
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Subtle shadow for smaller screens */
+}
+
+.timeline-content h3 {
+    font-size: 1.4em; /* Reduce font size for smaller screens */
+    margin: 0 0 5px;
+    color: #ffffff;
+}
+
+.timeline-content .position {
+    font-size: 1rem; /* Adjust size */
+    color: var(--lighterGray);
+    margin-bottom: 5px;
+}
+
+.timeline-content .date {
+    font-size: 1rem; /* Reduce font size */
+    color: var(--lighterGray);
+    margin-bottom: 8px;
+}
+
+.timeline-content .description {
+    font-size: 1rem; /* Adjust font size */
+    line-height: 1.4;
+    color: var(--lighterGray);
+}
+
+.timeline-content a {
+    color: var(--white);
+    text-decoration: none;
+}
+
+.timeline-content a:hover {
+    text-decoration: underline;
+}
+
+/* Responsive Design */
+@media screen and (max-width: 768px) {
+    .skills-experience-section {
+        padding: 30px 15px;
+    }
+
+    .skills-icons {
+        grid-template-columns: repeat(auto-fit, minmax(60px, 1fr)); /* Smaller column size for tablets */
+        gap: 10px;
+    }
+
+    .skill-item img {
+        width: 35px;
+        height: 35px;
+    }
+
+    .skill-item p {
+        font-size: 10px;
+    }
+
+    .timeline {
+        padding-left: 10px;
+        border-left: 1px solid var(--white);
+    }
+
+    .timeline-item {
+        margin-bottom: 20px;
+    }
+
+    .timeline-content {
+        margin-left: 15px;
+        padding: 6px 8px;
+    }
+
+    .timeline-content h3 {
+        font-size: 1em;
+    }
+
+    .timeline-content .description {
+        font-size: 0.8em;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .skills-icons {
+        grid-template-columns: repeat(auto-fit, minmax(50px, 1fr)); /* Adjust grid for mobile */
+        gap: 5px;
+    }
+
+    .skill-item img {
+        width: 30px;
+        height: 30px;
+    }
+
+    .skill-item p {
+        font-size: 9px;
+    }
+
+    .timeline-content {
+        margin-left: 10px;
+        padding: 5px 6px;
+    }
+
+    .timeline-content h3 {
+        font-size: 0.9em;
+    }
+
+    .timeline-content .description {
+        font-size: 0.7em;
+    }
+
+    .timeline-dot {
+        width: 8px;
+        height: 8px;
+        left: -4px;
+    }
+}

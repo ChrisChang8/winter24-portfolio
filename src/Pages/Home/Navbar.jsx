@@ -1,112 +1,79 @@
-import { useState, useEffect } from "react";
-import { scroller } from "react-scroll"; // Use scroller for programmatic scrolling
-import { useNavigate, useLocation } from "react-router-dom"; // For navigation and current location
-import './Navbar.css';
+import { useState } from "react";
+import { scroller } from "react-scroll"; // For smooth scrolling
+import { useNavigate, useLocation } from "react-router-dom";
+import "./Navbar.css";
 
 function Navbar() {
-    const [navActive, setNavActive] = useState(false);
+    const [activeSection, setActiveSection] = useState("Home"); // Default active link
     const navigate = useNavigate();
     const location = useLocation();
 
-    const toggleNav = () => {
-        setNavActive(!navActive);
+    // Map section names to their corresponding IDs
+    const sectionMap = {
+        Home: "top",
+        Work: "myWork",
+        Projects: "myProjects",
     };
 
-    const closeMenu = () => {
-        setNavActive(false);
-    };
-
-    const handleNavClick = (toSection) => {
+    const handleNavClick = (section) => {
+        setActiveSection(section); // Update the active section
         if (location.pathname !== "/") {
-            navigate("/"); // Navigate to Home page first
+            navigate("/"); // Navigate to home if not already there
             setTimeout(() => {
-                scrollToSection(toSection); // Scroll to section after navigation
-            }, 100); // Delay to ensure the page has loaded
+                scrollToSection(sectionMap[section]); // Scroll to the correct section
+            }, 100); // Small delay to ensure the page has loaded
         } else {
-            scrollToSection(toSection); // Scroll to section directly if already on Home
+            scrollToSection(sectionMap[section]);
         }
-        closeMenu();
     };
 
-    const scrollToSection = (section) => {
-        scroller.scrollTo(section, {
-            duration: 500,
-            delay: 0,
-            smooth: "easeInOutQuart",
-            offset: -70, // Adjust for navbar height
-        });
+    const scrollToSection = (sectionId) => {
+        if (sectionId === "top") {
+            window.scrollTo({
+                top: 0,
+                behavior: "smooth",
+            });
+        } else {
+            scroller.scrollTo(sectionId, {
+                duration: 500,
+                smooth: "easeInOutQuart",
+                offset: -50, // Adjust for taskbar height
+            });
+        }
     };
-
-    useEffect(() => {
-        const handleResize = () => {
-            if (window.innerWidth <= 500) {
-                closeMenu();
-            }
-        };
-
-        window.addEventListener("resize", handleResize);
-
-        return () => {
-            window.removeEventListener("resize", handleResize);
-        };
-    }, []);
 
     return (
-        <nav className={`navbar ${navActive ? "active" : ""}`}>
-            <button
-                className={`nav__hamburger ${navActive ? "active" : ""}`}
-                onClick={toggleNav}
-                aria-label="Toggle navigation menu"
-            >
-                <span className="nav__hamburger__line"></span>
-                <span className="nav__hamburger__line"></span>
-                <span className="nav__hamburger__line"></span>
-            </button>
-            <div className={`navbar--items ${navActive ? "active" : ""}`}>
-                <ul>
-                    <li>
-                        <span
-                            className="navbar--content"
-                            onClick={() => handleNavClick("heroSection")}
-                        >
-                            Home
-                        </span>
+        <nav className="taskbar">
+            <ul className="taskbar__items">
+                {["Home", "Work", "Projects"].map((item) => (
+                    <li
+                        key={item}
+                        className={`taskbar__item ${
+                            activeSection === item ? "active" : ""
+                        }`}
+                        onClick={() => handleNavClick(item)}
+                    >
+                        {item}
                     </li>
-                    <li>
-                        <span
-                            className="navbar--content"
-                            onClick={() => handleNavClick("myTools")}
-                        >
-                            Tools
-                        </span>
-                    </li>
-                    <li>
-                        <span
-                            className="navbar--content"
-                            onClick={() => handleNavClick("myExp")}
-                        >
-                            Experiences
-                        </span>
-                    </li>
-                    <li>
-                        <span
-                            className="navbar--content"
-                            onClick={() => (window.location.href = "/allProjects")}
-                        >
-                            Projects
-                        </span>
-                    </li>
-                    <li>
-                        <a
-                            href="mailto:christopherchang1688@gmail.com"
-                            className="navbar--content"
-                            onClick={closeMenu}
-                        >
-                            Contact
-                        </a>
-                    </li>
-                </ul>
-            </div>
+                ))}
+                {/* Add a CV link */}
+                <li
+                    className={`taskbar__item ${
+                        activeSection === "CV" ? "active" : ""
+                    }`}
+                    onClick={() => setActiveSection("CV")}
+                >
+                    <a
+                        href="https://docs.google.com/document/d/18gyxmgY6qInohTQ7kvcbDO9gpY0ftC6X/edit?usp=sharing&ouid=117637253647857405810&rtpof=true&sd=true"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="taskbar__link"
+                    >
+                        CV
+                    </a>
+                </li>
+
+            </ul>
         </nav>
     );
 }
