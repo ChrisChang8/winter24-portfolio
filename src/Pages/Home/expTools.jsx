@@ -28,7 +28,7 @@ export default function ExpTools() {
     return (
         <section id="myWork" className="experience-section">
             <div className="container">
-                <h1 className="section-title">Experiences.</h1>
+                <h1 className="section-title">Work.</h1>
                 <div className="experience-cards">
                     {/* MeshTek */}
                     <div className="experience-card fade-up">
