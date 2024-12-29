@@ -4,7 +4,7 @@ import './expTools.css';
 const experienceData = [
     {
         id: 1,
-        tags: ['AI Development', 'Mobile App.','Internship'],
+        tags: ['AI Development', 'Mobile App.','SWE Internship'],
         title: 'Generative AI and Text-to-Speech Development →',
         description:
             'Built a Generative AI model with Text-to-Speech for an Android application, improving speech error detection by 21.3% and model accuracy to 95.4%.',

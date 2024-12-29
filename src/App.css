@@ -5,8 +5,11 @@ body {
   -webkit-font-smoothing: "Roboto", sans-serif;
   -moz-osx-font-smoothing: "Roboto", sans-serif;
   font-style: normal;
-  background-color: var(--w);
+  background-color: var(--white); /* Fallback color */
+  background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="60" height="69" viewBox="0 0 60 69"><path fill="none" stroke="%23cccccc" stroke-width=".3" d="M30 1L58 15.5v38.5L30 68 2 54V15.5z"/></svg>');
+  background-size: 60px 69px; /* Match SVG dimensions */
 }
+
 
 h1,
 h2,
