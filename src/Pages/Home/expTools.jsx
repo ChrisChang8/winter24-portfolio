@@ -1,6 +1,36 @@
 import React, { useEffect } from 'react';
 import './expTools.css';
 
+const experienceData = [
+    {
+        id: 1,
+        tags: ['AI Development', 'Mobile App.','Internship'],
+        title: 'Generative AI and Text-to-Speech Development →',
+        description:
+            'Built a Generative AI model with Text-to-Speech for an Android application, improving speech error detection by 21.3% and model accuracy to 95.4%.',
+        alt: 'MeshTek.',
+        date: 'AUG 24 - NOV 24',
+    },
+    {
+        id: 2,
+        tags: ['Robotics', 'Web Dev.', "Game Design"],
+        title: 'Teaching and Mentorship for Young Developers →',
+        description:
+            'Taught web development (HTML, CSS, C++), led game design projects using Python/Java, and mentored 100+ students in robotics and programming.',
+        alt: 'Youth Tech Inc.',
+        date: 'MAY 24 - AUG 24',
+    },
+    {
+        id: 3,
+        tags: ['Data Analysis', 'Data Entry', 'Automation'],
+        title: 'Financial Modeling and Automation →',
+        description:
+            'Automated tenant rent rolls and expense reports, saving 100+ hours/month, and optimized financial models to cut repair costs by 4%.',
+        alt: 'Buckingham Apts.',
+        date: 'MAR 23 - AUG 23',
+    },
+];
+
 export default function ExpTools() {
     useEffect(() => {
         const observer = new IntersectionObserver(
@@ -30,56 +60,23 @@ export default function ExpTools() {
             <div className="container">
                 <h1 className="section-title">Work.</h1>
                 <div className="experience-cards">
-                    {/* MeshTek */}
-                    <div className="experience-card fade-up">
-                        <div className="tags-row">
-                            <span className="tag">AI Development</span>
-                            <span className="tag">Internship</span>
+                    {experienceData.map((exp) => (
+                        <div key={exp.id} className="experience-card fade-up">
+                            <div className="tags-row">
+                                {exp.tags.map((tag, index) => (
+                                    <span key={index} className="tag">
+                                        {tag}
+                                    </span>
+                                ))}
+                            </div>
+                            <h3 className="experience-title">{exp.title}</h3>
+                            <p className="experience-description">{exp.description}</p>
+                            <div className="company-info">
+                                <div className="company-name">{exp.alt}</div>
+                                <div className="company-date">{exp.date}</div>
+                            </div>
                         </div>
-                        <h3 className="experience-title">
-                            Generative AI and Text-to-Speech Development →
-                        </h3>
-                        <p className="experience-description">
-                            Built a Generative AI model with Text-to-Speech for an Android application, improving speech error detection by 21.3% and model accuracy to 95.4%.
-                        </p>
-                        <div className="company-image">
-                            <img src="https://via.placeholder.com/600x300.png?text=ILUNMI+MESHTEK%0AAUG+24+-+NOV+24." alt="MeshTek" />
-                        </div>
-                    </div>
-
-                    {/* Youth Tech Inc */}
-                    <div className="experience-card fade-up">
-                        <div className="tags-row">
-                            <span className="tag">Web Development</span>
-                            <span className="tag">Mentorship</span>
-                        </div>
-                        <h3 className="experience-title">
-                            Teaching and Mentorship for Young Developers →
-                        </h3>
-                        <p className="experience-description">
-                            Taught web development (HTML, CSS, C++), led game design projects using Python/Java, and mentored 100+ students in robotics and programming.
-                        </p>
-                        <div className="company-image">
-                            <img src="https://via.placeholder.com/600x300.png?text=YOUTH+TECH+INC.%0AMAY+24+-+AUG+24." alt="YT" />
-                        </div>
-                    </div>
-
-                    {/* Buckingham Court Apartments */}
-                    <div className="experience-card fade-up">
-                        <div className="tags-row">
-                            <span className="tag">Data Analysis</span>
-                            <span className="tag">Automation</span>
-                        </div>
-                        <h3 className="experience-title">
-                            Financial Modeling and Automation →
-                        </h3>
-                        <p className="experience-description">
-                            Automated tenant rent rolls and expense reports, saving 100+ hours/month, and optimized financial models to cut repair costs by 4%.
-                        </p>
-                        <div className="company-image">
-                            <img src="https://via.placeholder.com/600x300.png?text=BUCKINGHAM+APT.+%0AMAR+23+-+AUG+23." alt="APT" />
-                        </div>
-                    </div>
+                    ))}
                 </div>
             </div>
         </section>

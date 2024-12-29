@@ -93,13 +93,13 @@
   .learn-more {
     font-size: 1rem;
     font-weight: bold;
-    color: var(--black);
+    color: var(--darkGray);
     text-decoration: none;
     transition: color 0.3s ease, text-decoration 0.3s ease; /* Smooth transition */
   }
 
   .learn-more:hover {
-      text-decoration: underline; /* Add underline on hover */
+    color: var(--black);
   }
 
 
