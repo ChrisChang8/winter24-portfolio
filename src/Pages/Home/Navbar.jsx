@@ -64,7 +64,7 @@ function Navbar() {
                     onClick={() => setActiveSection("CV")}
                 >
                     <a
-                        href="https://docs.google.com/document/d/18gyxmgY6qInohTQ7kvcbDO9gpY0ftC6X/edit?usp=sharing&ouid=117637253647857405810&rtpof=true&sd=true"
+                        href="https://drive.google.com/file/d/1oR6EE0d9Fxc2R6Lh4bK3YsbjW1mbH-c9/view?usp=sharing"
                         target="_blank"
                         rel="noopener noreferrer"
                         className="taskbar__link"
