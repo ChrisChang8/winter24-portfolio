@@ -141,3 +141,10 @@ html {
   }
 }
 
+@media screen and (max-width: 480px) {
+  body {
+    background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="60" height="69" viewBox="0 0 60 69"><path fill="none" stroke="%23cccccc" stroke-width=".3" d="M30 1L58 15.5v38.5L30 68 2 54V15.5z"/></svg>');
+    background-size: calc(100% / 6) auto; /* Dynamically calculate size for 6 hexagons */
+    background-repeat: repeat;
+  }
+}
