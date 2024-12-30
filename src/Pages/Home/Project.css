@@ -144,7 +144,7 @@
   
     .projects-grid {
       grid-template-columns: 1fr; /* Single column layout */
-      gap: 20px; /* Reduce gap for small screens */
+      gap: 50px; /* Reduce gap for small screens */
     }
   
     .project-card {
@@ -175,3 +175,6 @@
     }
   }
   
+  @media screen and (max-width: 480px) {
+
+  }

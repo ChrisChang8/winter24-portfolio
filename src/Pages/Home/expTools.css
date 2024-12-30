@@ -121,3 +121,9 @@
         padding: 4px 8px;
     }
 }
+
+@media screen and (max-width: 480px) {
+    .experience-cards {
+        gap: 50px;
+    }
+}
